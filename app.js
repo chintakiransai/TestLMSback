@@ -13,7 +13,13 @@ dbToConnect()
 
 app.use(cors({
     origin:["http://localhost:5173","https://master--dashing-sprinkles-08ca64.netlify.app","https://fanciful-florentine-70900d.netlify.app/aboutus","https://warm-meerkat-3e9352.netlify.app"],
-    credentials:true
+    credentials: true,
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: [
+    'Access-Control-Allow-Origin',
+    'Content-Type',
+    'Authorization',
+    ],
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
